@@ -1,3 +1,22 @@
 h1 {
-    color:red;
+    color:black;
+}
+
+.percentage {
+    width: 45px;
+    height: auto;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.5%;
+}
+
+button {
+    border-radius: 0;
+    background-color: gray;
+    color: white;
+}
+
+button:hover {
+    background-color: #c5c5c5;
 }

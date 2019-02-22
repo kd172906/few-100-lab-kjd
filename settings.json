@@ -1,0 +1,27 @@
+{
+    "explorer.openEditors.visible": 0,
+    "editor.fontSize": 18,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "tslint.autoFixOnSave": true,
+    "files.autoSave": "onFocusChange",
+    "typescript.check.npmIsInstalled": true,
+    "editor.snippetSuggestions": "top",
+    "workbench.editor.labelFormat": "long",
+    "workbench.colorTheme": "Nova",
+    "editor.lineHeight": 28,
+    "editor.minimap.enabled": false,
+    "tslint.alwaysShowRuleFailuresAsWarnings": true,
+    "window.zoomLevel": 0,
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "workbench.colorCustomizations": {
+        "editorIndentGuide.activeBackground": "#ff0000"
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "eslint.autoFixOnSave": true,
+    "eslint.enable": true,
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}
