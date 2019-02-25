@@ -13,58 +13,53 @@
     <title>Downey's Tip Calculator</title>
 </head>
 
-<body>
-    <header class="container">
+<body class="container">
+    <header>
         <h1>Tip Calculator</h1>
     </header>
-    <div class="container">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"
-                      id="basic-addon1">$</span>
-            </div>
-            <input type="text"
-                   class="form-control"
-                   placeholder="Bill Amount"
-                   aria-label="Amount"
-                   aria-describedby="basic-addon1">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text"
+                  id="basic-addon1">$</span>
         </div>
+        <input type="text"
+               id="billAmount"
+               class="form-control"
+               placeholder="Bill Amount"
+               aria-label="Amount"
+               aria-describedby="basic-addon1">
     </div>
 
-    <!-- <section>
-        <div class="percentage"></div>
-        <div class="percentage"></div>
-        <div class="percentage"></div>
-    </section> -->
 
-    <section>
-        <div class="container">
-            <table>
-                <tr>
-                    <td><button type="percentage">10%</button></td>
-                    <td><button type="percentage">15%</button></td>
-                    <td><button type="percentage">20%</button></td>
-                </tr>
-            </table>
-        </div>
-    </section>
+    <div id="setTip"
+         class="btn-group">
+        <button type="button"
+                class="btn btn-secondary"
+                value="10">10%</button>
+        <button type="button"
+                class="btn btn-secondary"
+                value="15">15%</button>
+        <button type="button"
+                class="btn btn-secondary"
+                value="20">20%</button>
+    </div>
 
     <div>
-        <h5 id="tipConfirm"></h5>
+        <p id="tipConfirm"></p>
     </div>
-    <div class="container">
-        <ul class="list-group">
-            <li class="list-group-item">Bill Amount: </li>
-            <li class="list-group-item">Tip Percentage: </li>
-            <li class="list-group-item">Amount of tip: </li>
-            <li class="list-group-item">Total to be Paid: </li>
+    <div>
+        <ul class="list-group"
+            id="myList">
+            <li class="list-group-item"
+                id="list-bill-amt">Bill Amount:</li>
+            <li class="list-group-item"
+                id="list-tip-pct">Tip Percentage:</li>
+            <li class="list-group-item"
+                id="list-tip-amt">Amount of tip:</li>
+            <li class="list-group-item"
+                id="list-total">Total to be Paid:</li>
         </ul>
     </div>
-
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
