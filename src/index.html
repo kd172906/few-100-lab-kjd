@@ -22,14 +22,17 @@
             <span class="input-group-text"
                   id="basic-addon1">$</span>
         </div>
-        <input type="text"
+        <input type="number"
                id="billAmount"
                class="form-control"
                placeholder="Bill Amount"
                aria-label="Amount"
+               value=""
                aria-describedby="basic-addon1">
+        <div class="alert alert-danger">
+            <span id="error"></span>
+        </div>
     </div>
-
 
     <div id="setTip"
          class="btn-group">
