@@ -16,13 +16,8 @@ h1 {
 
 #SetTip:focus {
     background-color: #c5c5c5;
-
 }
 
 #billAmount {
-    height: auto;
-}
-
-#error {
     height: auto;
 }

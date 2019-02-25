@@ -15,7 +15,7 @@ let borderColor = BillAmount.style.borderColor;
 let success = true;
 
 
-function CalculateTip(t: any, b: any) {
+export function CalculateTip(t: any, b: any) {
     let tip = t / 100;
     return (b * tip);
 }
