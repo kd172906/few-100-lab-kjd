@@ -29,7 +29,9 @@
                aria-label="Amount"
                value=""
                aria-describedby="basic-addon1">
-        <div class="alert alert-danger">
+        <div class="alert alert-danger"
+             id="showError"
+             style="visibility: hidden">
             <span id="error"></span>
         </div>
     </div>
@@ -53,14 +55,10 @@
     <div>
         <ul class="list-group"
             id="myList">
-            <li class="list-group-item"
-                id="list-bill-amt">Bill Amount:</li>
-            <li class="list-group-item"
-                id="list-tip-pct">Tip Percentage:</li>
-            <li class="list-group-item"
-                id="list-tip-amt">Amount of tip:</li>
-            <li class="list-group-item"
-                id="list-total">Total to be Paid:</li>
+            <li class="list-group-item">Bill Amount: <span id="list-bill-amt"></span></li>
+            <li class="list-group-item">Tip Percentage: <span id="list-tip-pct"></span></li>
+            <li class="list-group-item">Amount of tip: <span id="list-tip-amt"></span></li>
+            <li class="list-group-item">Total to be Paid: <span id="list-total"></span></li>
         </ul>
     </div>
 

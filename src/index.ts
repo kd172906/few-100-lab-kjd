@@ -13,6 +13,9 @@ defaultTip.click();
 let d = document.getElementById('setTip');
 let borderColor = BillAmount.style.borderColor;
 let success = true;
+let bill: number = 0;
+let tipTotal: number = 0;
+let totalBill: number = 0;
 
 
 export function CalculateTip(t: any, b: any) {
@@ -22,47 +25,48 @@ export function CalculateTip(t: any, b: any) {
 
 function resetSummary() {
     tipConfirm.innerText = "";
-    billAmtTxt.textContent = "Bill Amount: ";
-    tipPctTxt.textContent = "Tip Percentage: ";
-    tipAmtTxt.textContent = "Amount of tip: ";
-    totalTxt.textContent = "Total to be Paid: ";
+    billAmtTxt.textContent = "";
+    tipPctTxt.textContent = "";
+    tipAmtTxt.textContent = "";
+    totalTxt.textContent = "";
 }
 
-function setError(msg: string) {
+function setError(msg: string, divVisibility: string) {
     document.getElementById('error').innerText = msg;
+    document.getElementById('showError').style.visibility = divVisibility;
 }
 
 function CalculateFinalBill() {
     if (!BillAmount.value) {
-        setError('Can\'t be empty')
+        setError('Dinner wasn\'t free', 'visible')
         BillAmount.style.borderColor = "red";
         resetSummary();
         success = false;
     }
     else if (Number(BillAmount.value) < 0) {
-        setError('You should still tip if you pay with coupons, you cheapskate!')
+        setError('You should still tip if you pay with coupons, you cheapskate!', 'visible')
         BillAmount.style.borderColor = "red";
         resetSummary();
         success = false;
     }
     else {
-        setError("");
+        setError("", 'hidden');
         BillAmount.style.borderColor = borderColor;
-        let bill = Number(BillAmount.value);
-        let tipTotal = CalculateTip(Number(tip.value), bill);
-        let totalBill = tipTotal + bill;
+        bill = Number(BillAmount.value);
+        tipTotal = CalculateTip(Number(tip.value), bill);
+        totalBill = tipTotal + bill;
         tipConfirm.innerText = "You are tipping " + tip.value + "%";
-        billAmtTxt.textContent = "Bill Amount: $" + bill.toFixed(2);
-        tipPctTxt.textContent = "Tip Percentage: " + tip.value + "%";
-        tipAmtTxt.textContent = "Amount of tip: $" + tipTotal.toFixed(2);
-        totalTxt.textContent = "Total to be Paid: $" + totalBill.toFixed(2);
+        billAmtTxt.textContent = "$" + bill.toFixed(2);
+        tipPctTxt.textContent = "$" + tip.value + "%";
+        tipAmtTxt.textContent = "$" + tipTotal.toFixed(2);
+        totalTxt.textContent = "$" + totalBill.toFixed(2);
         success = true;
     }
 }
 
 BillAmount.addEventListener('keyup', function () {
     CalculateFinalBill();
-})
+});
 
 const buttons = d.querySelectorAll('button');
 buttons.forEach(b => b.addEventListener('click', function () {
@@ -72,5 +76,5 @@ buttons.forEach(b => b.addEventListener('click', function () {
         buttons.forEach(x => x.disabled = false);
         b.disabled = true;
     }
-}))
+}));
 
